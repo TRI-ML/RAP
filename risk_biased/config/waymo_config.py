@@ -51,9 +51,9 @@ kl_threshold = 0.01
 learning_rate = 3e-4
 batch_size = 64
 accumulate_grad_batches = 2
-num_epochs_cvae = 0
+num_epochs_cvae = 200
 num_epochs_bias = 100
-gpus = [1]
+gpus = [0]
 seed = 0  # Give an integer value to seed will set seed for pseudo-random number generators in: pytorch, numpy, python.random
 num_workers = 8
 
