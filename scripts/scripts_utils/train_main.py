@@ -54,18 +54,18 @@ def create_callbacks(cfg: Config, log_dir: str, is_interaction: bool) -> list:
     )
 
     # Save checkpoints of current run in current wandb log dir
-#     checkpoint_callback = ModelCheckpoint(
-#         monitor="val/minfde/prior",
-#         mode="min",
-#         filename="epoch={epoch:02d}-step={step}-val_minfde_prior={val/minfde/prior:.2f}",
-#         auto_insert_metric_name=False,
-#         dirpath=wandb.run.dir,
-#         save_last=True,
-#     )
+    checkpoint_callback = ModelCheckpoint(
+        monitor="val/minfde/prior",
+        mode="min",
+        filename="epoch={epoch:02d}-step={step}-val_minfde_prior={val/minfde/prior:.2f}",
+        auto_insert_metric_name=False,
+        dirpath=wandb.run.dir,
+        save_last=True,
+    )
     
     callbacks = [
         last_run_checkpoint_callback,
-        # checkpoint_callback,
+        checkpoint_callback,
     ]
 
     if not is_interaction:
