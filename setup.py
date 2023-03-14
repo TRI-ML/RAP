@@ -14,7 +14,7 @@ setup(
         "matplotlib",
         "numpy",
         "mmcv>=1.4.7",
-        "pytorch-lightning",
+        "pytorch-lightning==1.7.7",
         "pytest",
         "setuptools>=59.5.0",
         "wandb",
