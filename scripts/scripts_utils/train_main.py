@@ -62,9 +62,10 @@ def create_callbacks(cfg: Config, log_dir: str, is_interaction: bool) -> list:
         dirpath=wandb.run.dir,
         save_last=True,
     )
+    
     callbacks = [
         last_run_checkpoint_callback,
-        checkpoint_callback,
+        # checkpoint_callback,
     ]
 
     if not is_interaction:
