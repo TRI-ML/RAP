@@ -8,6 +8,9 @@ from risk_biased.models.context_gating import ContextGating
 from risk_biased.models.mlp import MLP
 
 
+def identity(x, *args, **kwargs):
+    return x
+
 class SequenceEncoderMaskedLSTM(nn.Module):
     """MLP followed with a masked LSTM implementation with one layer.
 

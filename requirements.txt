@@ -1,14 +1,18 @@
-torch>=1.12
+# need to install torch==1.13.1+cu117 separately with  `pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117`
 matplotlib
-numpy
-mmcv>=1.4.7
+numpy==1.26.4
+opencv-python
+mmcv==1.4.7
+yapf==0.32.0
 pytorch-lightning==1.7.7
 pytest
 setuptools>=59.5.0
 wandb
 plotly
 scipy
-gradio>=3.7
+gradio==3.7
 einops
-pydantic
+pydantic==1.10
 fire
+packaging
+torchmetrics==0.11.4

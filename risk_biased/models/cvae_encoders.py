@@ -6,6 +6,7 @@ import torch.nn as nn
 
 from risk_biased.models.cvae_params import CVAEParams
 from risk_biased.models.nn_blocks import (
+    identity,
     MCG,
     MAB,
     MHB,
@@ -83,7 +84,7 @@ class BaseEncoderNN(nn.Module):
                 params.is_mlp_residual,
             )
         else:
-            self._interaction = lambda x, *args, **kwargs: x
+            self._interaction = identity
         self._output_layer = nn.Linear(params.hidden_dim, self.latent_dim)
 
     def encode_agents(self, x: torch.Tensor, mask_x: torch.Tensor, *args, **kwargs):

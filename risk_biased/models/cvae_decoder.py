@@ -4,6 +4,7 @@ import torch.nn as nn
 
 from risk_biased.models.cvae_params import CVAEParams
 from risk_biased.models.nn_blocks import (
+    identity,
     MCG,
     MAB,
     MHB,
@@ -87,7 +88,7 @@ class DecoderNN(nn.Module):
                 params.is_mlp_residual,
             )
         else:
-            self._interaction = lambda x, *args, **kwargs: x
+            self._interaction = identity
 
         if params.sequence_decoder_type == "MLP":
             self._decoder = SequenceDecoderMLP(

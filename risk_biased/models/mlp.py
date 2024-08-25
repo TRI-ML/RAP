@@ -3,6 +3,8 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 
+def zero(x):
+    return 0
 
 class MLP(nn.Module):
     """Basic MLP implementation with FC layers and ReLU activation.
@@ -45,7 +47,7 @@ class MLP(nn.Module):
         if add_residual:
             self.residual_layer = nn.Linear(input_dim, output_dim)
         else:
-            self.residual_layer = lambda x: 0
+            self.residual_layer = zero
         self._layer_norm = nn.LayerNorm(output_dim)
 
     def forward(self, input: torch.Tensor) -> torch.Tensor:

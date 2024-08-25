@@ -26,7 +26,7 @@ A conditional variational auto-encoder (CVAE) model is used as the base pedestri
 ## Installation
 
 - (Set up a virtual environment with python>3.7)
-- Install the packge with `pip -e install .`
+- Install the packge with `bash install.sh`
 
 ## Setting up the data
 

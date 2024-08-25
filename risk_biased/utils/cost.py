@@ -116,11 +116,17 @@ class BaseCostTorch:
             "max": masked_max_torch,
             "mean": masked_mean_torch,
             "discounted_mean": get_masked_discounted_mean_torch(params.discount_factor),
-            "now": lambda *args, **kwargs: args[0][..., 0],
-            "final": lambda *args, **kwargs: args[0][..., -1],
+            "now": self.get_now,
+            "final": self.get_final,
         }
 
         self._reduce_fun = reduce_fun_torch_dict[params.reduce]
+        
+    def get_now(self, x, *args, **kwargs):
+        return x[..., 0]
+    
+    def get_final(self, x, *args, **kwargs):
+        return x[..., -1]
 
     @property
     def distance_bandwidth(self):
@@ -176,10 +182,16 @@ class BaseCostNumpy:
             "discounted_mean": get_masked_reduce_np(
                 get_discounted_mean_np(params.discount_factor)
             ),
-            "now": get_masked_reduce_np(lambda *args, **kwargs: args[0][..., 0]),
-            "final": get_masked_reduce_np(lambda *args, **kwargs: args[0][..., -1]),
+            "now": get_masked_reduce_np(self.get_now),
+            "final": get_masked_reduce_np(self.get_final),
         }
         self._reduce_fun = reduce_fun_np_dict[params.reduce]
+        
+    def get_now(self, x, *args, **kwargs):
+        return x[..., 0]
+    
+    def get_final(self, x, *args, **kwargs):
+        return x[..., -1]
 
     @property
     def distance_bandwidth(self):
