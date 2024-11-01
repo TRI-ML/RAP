@@ -10,7 +10,7 @@ setuptools>=59.5.0
 wandb
 plotly
 scipy
-gradio==3.7
+gradio
 einops
 pydantic==1.10
 fire
