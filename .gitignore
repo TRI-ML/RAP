@@ -20,3 +20,9 @@ data*
 *.csv
 *.vscode*
 *.npy
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
