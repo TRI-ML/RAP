@@ -1,10 +1,10 @@
-# need to install torch==1.13.1+cu117 separately with  `pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117`
+# torch>=2.1.0 should be installed separately with specific index if CUDA support needed: `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`
 matplotlib
 numpy==1.26.4
 opencv-python
-mmcv==1.4.7
+mmcv-lite
 yapf==0.32.0
-pytorch-lightning==1.7.7
+lightning>=2.1.0
 pytest
 setuptools>=59.5.0
 wandb
@@ -12,7 +12,7 @@ plotly
 scipy
 gradio
 einops
-pydantic==1.10
+pydantic>=2.0.0
 fire
 packaging
-torchmetrics==0.11.4
+torchmetrics>=1.0.0
