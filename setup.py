@@ -10,19 +10,19 @@ setup(
     packages=["risk_biased"],
     zip_safe=False,
     install_requires=[
-        "torch==1.13.1+cu117",
+        "torch>=1.13.1",
         "matplotlib",
         "numpy==1.26.4",
         "mmcv==1.4.7",
-        "pytorch-lightning==1.7.7",
+        "pytorch-lightning>=1.8.6,<2.0.0",
         "pytest",
         "setuptools>=59.5.0",
         "wandb",
         "plotly",
         "scipy",
-        "pydantic==1.10",
+        "pydantic>=1.10,<2.0.0",
         "gradio",
         "einops",
-        "torchmetrics==0.11.4"
+        "torchmetrics>=0.11.4,<1.0.0"
     ],
 )
